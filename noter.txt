@@ -1,0 +1,47 @@
+General
+Repository must be publically available without password
+fejlmeddelelser giver filnavn(linje,tegn)
+
+compile trusted files into a library, and only compile other files manually later.
+
+Github
+git commit -am'message' # add a message
+git push
+git add
+
+
+Basics of C# programming
+make or make sometarget to compile everything or a specific target
+reference type: in C they use pointers, 
+in C# the = does not create a copy when we use classes, but it does create a new instance otherwise.
+
+using System - namespace, program will look for names in this space
+using static System.Console - for write command (static classes are hust containers)
+using static System.Math - you do not have to write Math every time
+
+non-static class
+
+you can make vis like "vi name.cs"
+Declare your class "public" so it is publically available
+
+class - 
+void - to for functions, that do not return anything
+double -
+> - overwrite
+>> - append
+$^ - command to put in Makefile
+
+MakeFile: 
+
+intermediate main:
+main1.exe : main.cs   - tilføj dine Vi's her!, separer med mellemrum. Tilføj også lige nedenunder (source code)!
+
+Library:
+in MakeFile write 
+name.dll : file1 file2
+    mcs file1 file2 -target:library -out:name.dll
+
+main.exe:main.cs name.dll
+    mcs main.cs -reference:name.dll -target:exe -out:main.exe
+
+shadowing of variables: cannot be done in block-scope, but works fine for method scope.

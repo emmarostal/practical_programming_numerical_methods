@@ -1,0 +1,31 @@
+3
+- Suppose you have messed something up terribly with the latest (uncommitted) changes to your project. 
+How can you discard all changes you have done to your project since the last commit?
+Answer: 
+
+
+- Suppose you have realized that the last commit contained an error. 
+How can you discard the last commit? The last two commits?
+Answer:
+
+
+- Suppose you have committed some changes to your project both at the server (the place where you push) 
+and at your box. What do you do now?
+Answer:
+
+
+- What are the values of the following automatic variables in a Makefile: $@, $<, $^?
+Answer:
+
+
+- What does this statement do in a Makefile recipe: $(filter %.cs,$^) ?
+Answer:
+
+
+- What does this statement do in a Makefile recipe: $(addprefix -reference:,$(filter %.dll,$^)) ?
+Answer:
+
+
+- When defining a macro in a Makefile, what is the difference between "=" and ":="?
+Answer:
+

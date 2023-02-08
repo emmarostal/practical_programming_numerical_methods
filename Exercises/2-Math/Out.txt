@@ -1,0 +1,30 @@
+sqrt(2) = 1.4142
+sqrt2*sqrt2 = 2 (should be equal to 2)
+exp(pi) = 23.1407
+ln(exp(pi)) = 3.1416 (should be equal to pi)
+pi^(e) = 22.4592
+(pi^(e))^(1/e) = 3.1416 (should be equal to pi)
+2^(1/5) = 1.1487
+(2^(1/5))^(5) = 2 (should be equal to 2)
+
+Stirling approximation
+gamma(1) = 0.999999989064903
+gamma(2) = 0.999999989064903
+gamma(3) = 1.99999997812981
+gamma(10) = 362879.997652016
+
+Ln of Stirling approximation
+ln(gamma(1)) = -1.0935097442935E-08
+ln(gamma(2)) = -1.0935097442935E-08
+ln(gamma(3)) = 0.693147169624848
+ln(gamma(10)) = 12.8018274736111
+
+ln(gamma(1M)) = 12815504.5691476
+
+Exp of the above
+exp(ln(gamma(1))) = 0.999999989064903
+exp(ln(gamma(2))) = 0.999999989064903
+exp(ln(gamma(3))) = 1.99999997812981
+exp(ln(gamma(10))) = 362879.997652016
+exp(ln(gamma(1M))) = Infinity
+gamma(-1) = 0
