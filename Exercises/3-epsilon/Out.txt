@@ -1,0 +1,16 @@
+1. Maximum and minimun integers
+my max int = 2147483647
+MaxValue int = 2147483647
+my min int = -2147483648
+MinValue int = -2147483648
+
+2. Machine epsilon
+my double = 2.22044604925031E-16
+1.0 - my double = 1
+my float = 1.192093E-07
+1.0 - my float = 0.99999988079071
+
+3. Small sums
+tiny = 1.11022302462516E-16
+sumA-1 = 0.000000e+000 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010
