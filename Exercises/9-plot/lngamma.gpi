@@ -1,0 +1,14 @@
+set terminal svg background "white" 
+set key bottom right
+set output "Lngamma.svg"
+set xlabel "x"
+set ylabel "y"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Ln(Gamma function)"
+set samples 800
+plot [0:6][-2:5] \
+"lngamma.data" with lines linetype 1 linecolor "blue" title "theory"\
+,"lngamma_tab.data" using ($1+1):($2) with points pointtype 4 title "tabulated"\
+

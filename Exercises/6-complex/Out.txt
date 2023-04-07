@@ -1,0 +1,35 @@
+Sqrt(-1)
+should be i
+is found to be 6.12e-17+1i
+The found value is close enough to the manually calculated value.
+
+Sqrt(i)
+should be (1+i)/sqrt(2), which is approximately 0.707(1+i)
+is found to be 0.707+0.707i
+The found value is close enough to the manually calculated value.
+
+e^i
+should be cos(1) + i sin(1), which is approximately 0.54+0.84i
+is found to be 0.54+0.841i
+The found value is close enough to the manually calculated value.
+
+e^(pi i)
+should be -1
+is found to be -1+1.22e-16i
+The found value is close enough to the manually calculated value.
+
+i^i
+should be e^(-pi/2), which is approximately 0.208
+is found to be 0.208+0i
+The found value is close enough to the manually calculated value.
+
+ln(i)
+should be i pi / 2, which is approximately 1.57i
+is found to be 0+1.57i
+The found value is close enough to the manually calculated value.
+
+sin(i pi)
+should be i*sinh(pi), which is approximately 11.54i
+is found to be 0+11.5i
+The found value is close enough to the manually calculated value.
+

@@ -45,3 +45,28 @@ main.exe:main.cs name.dll
     mcs main.cs -reference:name.dll -target:exe -out:main.exe
 
 shadowing of variables: cannot be done in block-scope, but works fine for method scope.
+
+Til muktiprocessing - brug thread safe random number generator, hvis nødvendigt.
+
+Tegn kurve i koordinatsystem: Parametriser med parameter t, 
+lav splines for hver koordinat.
+
+gnuplot spline: cspline, akima
+
+cubic spline wiggles for a straight line. Wiggle diminishes.
+quadratic spline is worse, since the wiggle stays.
+Akima: solves this, by making the second derivative continuous, but not differentiable.
+monotonous spline: extrema are only allowed at points - not between them.
+
+ODE:
+The error is sqrt(sum_i(e_i^2)) \le sqrt(sum_i(T^2h_i/(b-a)))=T=max(acc+eps*norm(y_b)) <- use the local norm(y_i) instead
+make sure that the error is smaller than a tolerance e_i<Tsqrt(h_i/(b-a))
+
+solve IVP (initial value problem)
+Runge-Kutta stepper, stepsize h (se billeder fra 24/3)
+
+
+Shooting method (solve hydrogen atom diff eq)
+
+
+Remember to only diagonalize symmetric matrices.
