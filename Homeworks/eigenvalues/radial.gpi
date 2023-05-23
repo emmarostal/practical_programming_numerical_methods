@@ -1,0 +1,40 @@
+set terminal svg background "white"
+set key autotitle columnheader horizontal maxrows 3 outside below font ",14"
+set output "radial.svg"
+set xlabel "r [a_0]"
+set ylabel "|f(r)|^2"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Radial s-wave functions"
+set samples 800
+datafile = 'radial.data'
+stats datafile
+datafile = 'radial.data'
+stats datafile nooutput
+
+
+plot for [IDX=0:2] \
+    datafile \
+    index IDX \
+    using 1:2 \
+    with points pt 7 ps 0.6  \
+    title columnheader(1)
+
+plot for [IDX=3:3] \
+    datafile \
+    index IDX \
+    using 1:2 \
+    with lines lw 0.6 lc black \
+    title columnheader(1)
+
+plot for [IDX=4:STATS_blocks-1] \
+    datafile \
+    index IDX \
+    using 1:2 \
+    with lines lw 0.6 lc black \
+    notitle
+
+
+
+

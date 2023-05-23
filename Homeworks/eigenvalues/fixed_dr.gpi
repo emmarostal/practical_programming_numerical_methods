@@ -1,0 +1,12 @@
+set terminal svg background "white"
+set key bottom right
+set output "fixed_dr.svg"
+set xlabel "r_{max} [a_0]"
+set ylabel "ε_0 [Hartree]"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Varying r_{max}"
+set samples 800
+plot [0:13][-0.6:0] \
+"fixed_dr.data" with points pointtype 13 linecolor "dark-green" title "Fixed dr = 0.1 a_0"\
