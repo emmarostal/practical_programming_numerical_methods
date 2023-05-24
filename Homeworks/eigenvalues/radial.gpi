@@ -19,16 +19,12 @@ plot for [IDX=0:2] \
     index IDX \
     using 1:2 \
     with points pt 7 ps 0.6  \
-    title columnheader(1)
-
-plot for [IDX=3:3] \
+    title columnheader(1), for [IDX=3:3] \
     datafile \
     index IDX \
     using 1:2 \
     with lines lw 0.6 lc black \
-    title columnheader(1)
-
-plot for [IDX=4:STATS_blocks-1] \
+    title columnheader(1), for [IDX=4:STATS_blocks-1] \
     datafile \
     index IDX \
     using 1:2 \

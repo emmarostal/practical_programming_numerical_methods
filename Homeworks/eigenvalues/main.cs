@@ -29,33 +29,36 @@ public static class main{
             for(int x = 0 ; x <= 2 ; x += 1){
                 double r = 0;
                 double dr = 0.1;
-                WriteLine($"{x}s-wave");
-                matrix radialW = BuildHam(10,dr).Item2;
-                for(int y = 0;y<=radialW.size1-1; y+=1){
-                    WriteLine($"{r+=dr} {Pow(1/Sqrt(dr)*radialW[y,x],2)}");
+                WriteLine($"{x+1}s-wave");
+                matrix radialW = BuildHam(30,dr).Item2;
+                for(int y = 0;y<=radialW.size1-1; y++){
+                    WriteLine($"{r} {Pow(1/Sqrt(dr)*radialW[y,x],2)}");
+                    r+=dr;
                 }
                 WriteLine("\n\n");    
                 }
                 WriteLine("Analytical");
                 double r1 = 0;
                 double dr1 = 0.1;
-                matrix radialW1 = BuildHam(10,dr1).Item2;
+                matrix radialW1 = BuildHam(30,dr1).Item2;
                 for(int y = 0;y<=radialW1.size1-1; y+=1){
-                double analytical1 =Pow(r1*2*Exp(-(r1)),(double)2);
+                double analytical1 =1.25*Pow(r1/Sqrt(PI*dr1)*Exp(-(r1)),2);
                 WriteLine($"{r1} {analytical1}");
                 r1+=dr1;
         }WriteLine("\n\n");   
         double r2 = 0;
+        double dr2 = 0.1;
         for(int y = 0;y<=radialW1.size1-1; y+=1){
-                double analytical2 =Pow(r2/Sqrt(2)*(1-r2/2)*Exp(-r2/2),(double)2);;
+                double analytical2 =1.25*Pow(r2/Sqrt(32*PI*dr2)*(2-r2)*Exp(-r2/2),2);
                 WriteLine($"{r2} {analytical2}");
-                r2+=dr1;
+                r2+=dr2;
         }WriteLine("\n\n");   
         double r3 = 0;
+        double dr3 = 0.1;
         for(int y = 0;y<=radialW1.size1-1; y+=1){
-                double analytical3 =Pow(r3*2/(3*Sqrt(3))*(1-2*r3/3 + 2*r3*r3/27)*Exp(-r3/3),(double)2); 
+                double analytical3 =1.25*Pow(r3/(81*Sqrt(3*PI*dr3))*(27-18*r3+2*r3*r3)*Exp(-r3/3),2); 
                 WriteLine($"{r3} {analytical3}");
-                r3+=dr1;
+                r3+=dr3;
         }
         }
 
