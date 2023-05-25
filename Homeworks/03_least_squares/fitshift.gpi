@@ -1,5 +1,5 @@
 set terminal svg
-set termoption dashed
+set terminal svg background "white"
 set output "fitshift.svg"
 set key top right
 set xlabel "t [days]"

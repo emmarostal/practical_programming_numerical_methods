@@ -1,4 +1,5 @@
 set terminal svg
+set terminal svg background "white"
 set output "fit.svg"
 set key top right
 set xlabel "t [days]"
