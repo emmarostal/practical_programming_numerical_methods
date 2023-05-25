@@ -1,0 +1,14 @@
+set terminal svg
+set termoption dashed
+set output "fitshift.svg"
+set key top right
+set xlabel "t [days]"
+set ylabel "Relative intensity"
+set tics out
+set grid
+set title "Radioactive decay of 224-Ra"
+plot "evaluatedFit.txt" using ($1):($2) with lines lt rgb "black" title "Exponential fit"\
+,"data.txt" using 1:2:3 with yerrorbars lc "dark-spring-green" pt 7 ps 0.9 title "Data"\
+,"evaluatedFit.txt" using ($1):($3) with lines lt  3 lc "dark-magenta" title "Exponential fit lower"\
+,"evaluatedFit.txt" using ($1):($4) with lines lt  3  lc "web-blue" title "Exponential fit upper" \
+

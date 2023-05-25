@@ -1,0 +1,16 @@
+-----------------------------------------------------------------
+Part A and B
+A fit to Rutherford and Soddy's data can be seen in fit.svg
+Covariance matrix:
+
+   0.00115   0.000178 
+  0.000178   4.83e-05 
+
+Fitted T1/2 = 4.08004641904341 +- 0.166914715082983 d,
+the modern value is 3.6319+-0.0023 d, which means that the value
+from the fit does not agree with the modern value.
+-----------------------------------------------------------------
+Part C
+Exponential decay data with fitting parameters shifted by the 
+uncertainties from the covariance matrix are plotted and can 
+be seen in fitshift.svg
