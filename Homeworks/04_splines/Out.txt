@@ -1,0 +1,5 @@
+Part A
+-------------------------------------------------------
+An indicative plot of the linear spline and integrator
+can be seen in linear.svg
+-------------------------------------------------------

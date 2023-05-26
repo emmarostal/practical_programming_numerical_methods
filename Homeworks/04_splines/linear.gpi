@@ -1,0 +1,16 @@
+set terminal svg
+set terminal svg background "white"
+set output "linear.svg"
+set key bottom right
+set xlabel "x"
+set xzeroaxis
+set xrange [0:10]
+set ylabel "y"
+set tics out
+set grid
+set title "Linear interpolation of sin(x)"
+plot sin(x), "linterp.txt" using ($1):($2) with point pt 7 ps 0.9 title "Values from list"\
+, "linterp.txt" using ($3):($4) with point pt 7 ps 0.9 lc rgb "web-blue" title "Interpolated values"\
+, "linterp.txt" using ($1):($2) with lines lc rgb "web-blue" notitle\
+, "linterp.txt" using ($3):($5) with lines lc rgb "black" title "Integral" 
+
