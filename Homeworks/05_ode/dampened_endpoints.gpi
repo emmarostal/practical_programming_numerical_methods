@@ -1,0 +1,13 @@
+set terminal svg background "white"
+set output "Dampened_end.svg"
+set key bottom right
+set xlabel "t"
+set xrange [-0.3:10.3]
+set yrange [-4.3:3.5]
+set tics out
+set grid
+set title "Oscillator with friction example, including endpoint functionality"
+plot "dampened_endpoints.txt" using ($1):($2) with points lt rgb "blue" ps 1.4 title "theta(t) (endpoints)"\
+, "dampened_endpoints.txt" using ($1):($3) with points lt rgb "dark-green" ps 1.4 title "omega(t) (endpoints)"\
+, "dampened.txt" using ($1):($2) with lines lt rgb "blue" lw 3 title "theta(t)"\
+, "dampened.txt" using ($1):($3) with lines lt rgb "dark-green" lw 3 title "omega(t)"\

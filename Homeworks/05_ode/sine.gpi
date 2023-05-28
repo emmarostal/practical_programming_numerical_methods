@@ -1,0 +1,11 @@
+set terminal svg background "white"
+set output "Sine.svg"
+set key bottom right
+set xlabel "x"
+set ylabel "y"
+set grid
+set yrange [-1.2:1.1]
+set xrange [-0.3:12.9]
+set title "u'' = -u with initial conditions u = 0 and u' = 1"
+set tics out
+plot "harmonic_diff.txt" using ($1):($2) with lines lt rgb "black" lw 3 title "Solution"\
