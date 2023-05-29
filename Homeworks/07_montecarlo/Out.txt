@@ -1,0 +1,20 @@
+-----------------------------------------------------------------------------------
+Part A
+-----------------------------------------------------------------------------------
+The area of a unit circle was calculated using simple Monte Carlo integration.
+The result can be seen in UnitCircle.svg.
+The estimated error and the actual error are plotted as functions of the number of
+sampling points N in UnitCircleErrors.svg to be compared with 1/Sqrt(N).
+Complicated integral 1-(cos(x)*cos(y)*cos(z))^-1 with respect to x, y and z,
+all from 0 to PI is calculated as: 1.39338728690733 +- 0.00319974597420118,
+using N = 10000000 in simple Monte Carlo integration.
+It should return Gamma(1/4)^4 / (5*PI^3) = 1.3932039296856768591842462603255
+-----------------------------------------------------------------------------------
+Part B
+-----------------------------------------------------------------------------------
+ A multidimensional quasi-random Monte-Carlo integrator has been implemented.
+ The scaling of the error is compared to the pseudo-random Monte-Carlo integrator
+ in UnitCircleErrorsCompare.svg.
+ The calculated area of the unit circle using this integration scheme is plotted in
+ UnitCircle.svg.
+-----------------------------------------------------------------------------------
