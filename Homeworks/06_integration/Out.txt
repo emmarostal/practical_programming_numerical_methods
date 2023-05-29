@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------------------------------------------------------
+Part A
+---------------------------------------------------------------------------------------------------------------------------
+The integrator is tested on a selection of functions:
+Sqrt(x)dx from x = 0 to x = 1.         Expected result: 2/3 ~ 0.667,   Result: 0.666953909054655
+1/Sqrt(x)dx from x = 0 to x = 1.       Expected result: 2,             Result: 1.99996150007805
+4*Sqrt(1-x^2)dx from x = 0 to x = 1.   Expected result: pi,            Result: 3.14183457802727
+ln(x)/Sqrt(x)dx from x = 0 to x = 1.   Expected result: -4,            Result: -3.99991705899915
+---------------------------------------------------------------------------------------------------------------------------
+Calculation of the error function with absolute integration error 1e-7 and relative error 1e-6 has been plotted on Erf.svg.
+To determine whether the integral error-function is more accurate than the approximate error-function, tabulated values 
+from wikipedia are used. The squared value of the difference to the tabulated values for each model is calculated and 
+the approximate result is subtracted from the integral result. The sign of the difference determines which model is more
+accurate. The negative values indicate that the integral erf is more accurate. The result can be seen in ErfResiduals.svg.
+---------------------------------------------------------------------------------------------------------------------------
+Part B
+---------------------------------------------------------------------------------------------------------------------------
+Testing number of evalutations needed in the different integrators
+Integral from x = 0 to x = 1 of 1/sqrt(x), should be equal to: 2
+Normal adaptive quadratures gives:             1.99996150007805 in 4285 evaluations
+Clenshaw-Curtis variable transformation gives: 1.99999201046432 in 7 evaluations
+
+Integral from x = 0 to x = 1 of 4*sqrt(1-x^2), should be equal to: -4
+Normal adaptive quadratures gives:             -3.99991705899915 in 4301 evaluations
+Clenshaw-Curtis variable transformation gives: -3.99987385646141 in 47 evaluations
+
+The python script finds the results with the same tolerance in 231 and 315 evaluations, respectivly.
+---------------------------------------------------------------------------------------------------------------------------

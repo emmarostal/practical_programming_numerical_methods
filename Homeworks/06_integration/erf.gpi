@@ -1,0 +1,12 @@
+set terminal svg background "white"
+set output "Erf.svg"
+set key bottom right
+set xlabel "x"
+set ylabel "y"
+set xrange [-5.1:5.1]
+set yrange [-1.5:1.5]
+set tics out
+set grid
+set title "Error function (integral version)"
+plot "calculated_erf.txt" using ($1):($2) with lines lt rgb "skyblue" lw 3 title "erf(x)"\
+, "erf_tab.data" using ($1):($2) with points pt 7 lt rgb "sea-green" lw 3 title "tabulated values"\

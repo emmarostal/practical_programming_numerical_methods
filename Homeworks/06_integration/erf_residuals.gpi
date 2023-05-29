@@ -1,0 +1,12 @@
+set terminal svg background "white"
+set output "ErfResiduals.svg"
+set key top right
+set xlabel "x"
+set ylabel "y"
+set xrange [-0.1:3.1]
+set yrange [-5E-14:5E-14]
+set tics out
+set grid
+set title "The squared difference between tabulated and calculated values are calculated.\n The approximate result is subtracted from the integral result.\n Negative y-values indicate that the integral erf is more accurate."
+plot "erf_residuals.txt" using ($1):($4) with points pt 7 ps 1 lt rgb "sea-green" lw 3 title "|Integral Erf-tab|^2 - |Approximate erf-tab|^2"\
+
