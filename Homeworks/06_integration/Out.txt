@@ -20,7 +20,7 @@ Integral from x = 0 to x = 1 of 1/sqrt(x), should be equal to: 2
 Normal adaptive quadratures gives:             1.99996150007805 in 4285 evaluations
 Clenshaw-Curtis variable transformation gives: 1.99999201046432 in 7 evaluations
 
-Integral from x = 0 to x = 1 of 4*sqrt(1-x^2), should be equal to: -4
+Integral from x = 0 to x = 1 of ln(x)/Sqrt(x), should be equal to: -4
 Normal adaptive quadratures gives:             -3.99991705899915 in 4301 evaluations
 Clenshaw-Curtis variable transformation gives: -3.99987385646141 in 47 evaluations
 

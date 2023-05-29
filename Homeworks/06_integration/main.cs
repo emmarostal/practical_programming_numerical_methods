@@ -83,7 +83,7 @@ public static class main{
         WriteLine($"Clenshaw-Curtis variable transformation gives: {resultCCA} in {integrator.evals} evaluations");
 
         WriteLine();
-        WriteLine($"Integral from x = 0 to x = 1 of 4*sqrt(1-x^2), should be equal to: {-4}");
+        WriteLine($"Integral from x = 0 to x = 1 of ln(x)/Sqrt(x), should be equal to: {-4}");
         double resultnormalB = integrator.integrate(f3, 0, 1);
         WriteLine($"Normal adaptive quadratures gives:             {resultnormalB} in {integrator.evals} evaluations");
         double resultCCB = integrator.integrateClenCur(f3, 0, 1);
