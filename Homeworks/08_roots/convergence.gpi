@@ -1,0 +1,30 @@
+set terminal svg background "white" size 1000,800
+set output "Convergence.svg"
+
+set multiplot layout 2,2
+
+set title "Varying r_{min}" font ",18"
+set xlabel "r_{min} [a_0]" font ",16"
+set ylabel "E_0 [Hartree]" font ",16"
+set key font ",15"
+set key bottom left
+plot "rmin.txt" using 1:2 with lines lc "web-blue" lw 2 title "E_0"\
+
+set title "Varying r_{max}" font ",18"
+set xlabel "r_{max} [a_0]" font ",16"
+set key font ",15"
+set key bottom right
+plot "rmax.txt" using 1:2 with lines lc "web-green" lw 2 title "E_0"\
+
+set title "Varying absolute accuracy" font ",18"
+set xlabel "absolute accuracy" font ",16"
+set key font ",15"
+set logscale x
+set key bottom left
+plot "absacc.txt" using 1:2 with lines lc "red" lw 2 title "E_0"\
+
+set title "Varying epsilon" font ",18"
+set xlabel "epsilon" font ",16"
+set key font ",15"
+set key bottom right
+plot "epsacc.txt" using 1:2 with lines lc "orange" lw 2 title "E_0"\
