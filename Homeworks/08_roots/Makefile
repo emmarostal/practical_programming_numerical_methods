@@ -16,6 +16,9 @@ Hydrogen.svg: hydrogen.gpi
 Convergence.svg: convergence.gpi rmin.txt rmax.txt absacc.txt epsacc.txt 
 	gnuplot $<
 
+Convergence2.svg: convergence2.gpi rmin.txt rmax.txt absacc.txt epsacc.txt 
+	gnuplot $<
+
 main.exe : main.cs matrix.dll QRGS.dll genlist.dll ode.dll
 	mcs -target:exe -out:$@ $(CODE) $(DLLS)
 

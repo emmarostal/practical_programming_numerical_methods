@@ -11,9 +11,7 @@ public static class main{
         WriteLine(border);
         WriteLine("Part A");
         WriteLine(border);
-        vector v = new vector(2);
-        v[0]=12;
-        v[1]=-10;
+        vector v = new vector(12,-10);
  
         WriteLine("We wish to find an extremum of the Rosenback's valley function:\n");
         WriteLine("f(x,y) = (1-x)^2+100(y-x^2)^2.\n");
@@ -34,12 +32,12 @@ public static class main{
         WriteLine(border);
         WriteLine("Part B");
         WriteLine(border);
-        vector c = new vector(1);
-        c[0]=-1;
-        Func<vector, vector> toMinimize = x => Me(x,0.001,8, 0.01, 0.01);
-		vector eval = newton(toMinimize,c,0.01);
+        //vector c = new vector(1);
+        //c[0]=-1;
+        Func<double, double> toMinimize = x => Me(x,0.001,8, 0.01, 0.01);
+		double eval = newton(toMinimize,-1,0.01);
         WriteLine("With the shooting method, the binding energy of lowest bound S-electron in H is found");
-        WriteLine($"to be {eval[0]} Hartree. Expected value is -0.5 Hartree.");
+        WriteLine($"to be {eval} Hartree. Expected value is -0.5 Hartree.");
         WriteLine("The wavefunction corresponding to this eigenenergy is plotted on Hydrogen.svg,");
         WriteLine("along with the analytical solution. They only differ at the very end.");
 
@@ -51,24 +49,58 @@ public static class main{
 			toWrite += $"{rs[i]}\t{ys[i][0]}\t{rs[i]*Exp(-rs[i])}\n";
 		}
 		File.WriteAllText("wavefunctions.txt",toWrite);
-
-       
-
-    
-
         
 
-        WriteLine("Varying rmax...");
+        WriteLine("Varying rmax");
         toWrite = "";
         for(int i = 0; i < 100; i++){
-            double rmax = 8+0.04*(i);
-            toMinimize = x => Me(x,0.01,rmax,1e-2,1e-2);
-            eval = newton(toMinimize,c,1e-2);
-            toWrite += $"{rmax}\t{eval[0]}\n";
-            WriteLine($"{i} of 100");
+            double rmax = 6+0.04*(i);
+            toMinimize = x => Me(x,0.01,rmax,1e-2, 1e-2);
+            eval = newton(toMinimize,-1,1e-4);
+            toWrite += $"{rmax}\t{Abs(eval+0.5)/0.5}\n";
         }
         File.WriteAllText("rmax.txt",toWrite);
 
+        WriteLine("Varying abs accuracy");
+        toWrite = "";
+        for(int i = 0; i < 100; i++){
+            double absacc = 1e-5*(100 *i+5);;
+            toMinimize = x => Me(x,0.01,8, absacc, 1e-4);
+            eval = newton(toMinimize,-1,1e-2);
+            toWrite += $"{Log10(absacc)}\t{Log10(Abs(eval+0.5)/0.5)}\n";
+        }
+        File.WriteAllText("absacc.txt",toWrite);
+
+        WriteLine("Varying relative accuracy");
+        toWrite = "";
+        for(int i = 0; i < 100; i++){
+            double epsacc = 1e-5*(100*i+5);
+            toMinimize = x => Me(x,0.01,8, 1e-4, epsacc);
+            eval = newton(toMinimize,-1,1e-2);
+            toWrite += $"{Log10(epsacc)}\t{Log10(Abs(eval+0.5)/0.5)}\n";
+        }
+        File.WriteAllText("epsacc.txt",toWrite);
+
+ 	toWrite = "";
+        WriteLine("Varying rmin");
+        for(int i = 0; i < 1000; i++){
+            double rmin = 0.0003*(i+4);
+            toMinimize = x => Me(x,rmin,8,1e-4,1e-4);
+            eval = newton(toMinimize,-1,1e-4);
+            toWrite += $"{rmin}\t{Abs(eval+0.5)/0.5}\n";
+        }
+        File.WriteAllText("rmin.txt",toWrite);
+        WriteLine("Done.");
+        WriteLine("The convergence is investigated by means of varying different parameters, one");
+        WriteLine("at a time. The resulting plot can be seen in Convergence.svg.");
+        WriteLine(border);
+
+    }
+    static double newton(Func<double,double> f, double x, double eps=1e-2){
+        Func<vector,vector> fvec = z => new vector(f(z[0]));
+        vector xvec = new vector(1);
+        xvec[0] = x;
+        return newton(fvec,xvec,eps)[0];
     }
 
     static vector newton(Func<vector,vector> f, vector x, double eps=1e-2){
@@ -123,15 +155,15 @@ public static class main{
         return result;
     }
 
-    public static vector Me(vector E, double rmin = 0.001, double rmax = 8, double absacc = 0.01, double epsacc = 0.01, genlist<double> rs = null, genlist<vector> ys = null){
+    public static double Me(double E, double rmin = 0.001, double rmax = 8, double absacc = 0.01, double epsacc = 0.01, genlist<double> rs = null, genlist<vector> ys = null){
                 Func<double,vector,vector> schr  = (x,y) => {
                     vector dydr = new vector(2);
                     // diff eq. is f'' = - 2 *(E+1/r)f. If y_1 = f', y_0 = f this gives
                     // y_0' = y_1
                     // y_1' = -2*(E+1/r)*y_0
-                    double E_0 = E[0];
+                    //double E_0 = E[0];
                     dydr[0] = y[1];
-                    dydr[1] = -2*(E_0+1/x)*y[0];
+                    dydr[1] = -2*(E+1/x)*y[0];
                     return dydr;
                 };
 
@@ -140,7 +172,7 @@ public static class main{
                 init[0] = rmin - rmin*rmin;
                 init[1] = 1-2*rmin;
                 (genlist<double> xmax, genlist<vector> ymax) = odesolver.driver(schr, rmin, init, rmax, 0.01, absacc, epsacc, rs, ys);
-                return ymax[0]; //final point in the solution (at rmax), this is what should be zero if we find correct E. 
+                return ymax[0][0]; //final point in the solution (at rmax), this is what should be zero if we find correct E. 
         
 
     }

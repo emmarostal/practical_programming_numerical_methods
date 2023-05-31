@@ -5,26 +5,29 @@ set multiplot layout 2,2
 
 set title "Varying r_{min}" font ",18"
 set xlabel "r_{min} [a_0]" font ",16"
-set ylabel "E_0 [Hartree]" font ",16"
+set logscale y
+set ylabel "(E_0-E_{analytical})/E_{analytical}" font ",16"
 set key font ",15"
+
 set key bottom left
-plot "rmin.txt" using 1:2 with lines lc "web-blue" lw 2 title "E_0"\
+plot "rmin.txt" using 1:2 with lines lc "web-blue" lw 2 title "r_{min} convergence"\
 
 set title "Varying r_{max}" font ",18"
 set xlabel "r_{max} [a_0]" font ",16"
 set key font ",15"
 set key bottom right
-plot "rmax.txt" using 1:2 with lines lc "web-green" lw 2 title "E_0"\
+plot "rmax.txt" using 1:2 with lines lc "web-green" lw 2 title "r_{max} convergence"\
 
 set title "Varying absolute accuracy" font ",18"
-set xlabel "absolute accuracy" font ",16"
+set xlabel "Log_{10}(absolute accuracy)" font ",16"
+unset logscale y
+set ylabel "Log_{10}((E_0-E_{analytical})/E_{analytical})" font ",16"
 set key font ",15"
-set logscale x
 set key bottom left
-plot "absacc.txt" using 1:2 with lines lc "red" lw 2 title "E_0"\
+plot "absacc.txt" using 1:2 with lines lc "red" lw 2 title "absolute accuracy convergence"\
 
 set title "Varying epsilon" font ",18"
-set xlabel "epsilon" font ",16"
+set xlabel "Log_{10}(epsilon)" font ",16"
 set key font ",15"
 set key bottom right
-plot "epsacc.txt" using 1:2 with lines lc "orange" lw 2 title "E_0"\
+plot "epsacc.txt" using 1:2 with lines lc "orange" lw 2 title "relative accuracy convergence"\
