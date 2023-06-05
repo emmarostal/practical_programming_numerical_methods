@@ -1,0 +1,32 @@
+------------------------------------------------------------------------------------------------
+Part A
+------------------------------------------------------------------------------------------------
+We wish to find the minimum of the Rosenbrock's Valley function: f(x,y)=(1-x)^2+100(y-x^2)^2.
+The minimizer routine found the minimum at: (1.00005096634291, 1.00010241423045) in 23740 steps.
+The mimimum should be located at (1,1).
+
+Now we wish to find the minimum of the Himmelblau's function: f(x,y)=(x^2+y-11)^2+(x+y^2-7)^2.
+With start guess of (3.1, 2,1) the minimizer routine found the minimum at:
+(2.99999957396454, 2.00000094187261) in 43 steps.
+The minimum should be located at (3,2).
+
+There are three other minima, which can be found by changing the starting guess:
+With start guess of (-2, 3) the minimizer routine found the minimum at:
+(-2.80511851070567, 3.13131254966008) in 17 steps.
+The minimum should be located at (-2.805118,3.131312).
+
+With start guess of (-3, -3) the minimizer routine found the minimum at:
+(-3.77931027471923, -3.28318601173948) in 18 steps.
+The minimum should be located at (-3.779310,-3.283186).
+
+With start guess of (3, -2) the minimizer routine found the minimum at:
+(3.58442788478103, -1.84812277392817) in 44 steps.
+The minimum should be located at (3.584428,-1.848126).
+
+------------------------------------------------------------------------------------------------
+Part B
+------------------------------------------------------------------------------------------------
+Fitting Breit-Wigner to Higgs data with initial parameter guesses A = 16, m = 126, Γ = 2
+Fit concluded with parameters A = 9.87617544281007, m = 125.972186843168, Γ = 2.08632228986726
+The resulting plot can be seen in BW_fit.svg
+------------------------------------------------------------------------------------------------

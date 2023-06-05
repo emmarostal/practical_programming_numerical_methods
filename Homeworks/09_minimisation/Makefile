@@ -5,19 +5,18 @@ GDIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Exercises
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 
-all: Out.txt Hydrogen.svg Convergence.svg
+all: Out.txt BW_fit.svg
 
 Out.txt:  main.exe  
-	mono main.exe > Out.txt
+	mono main.exe < Higgsdata.txt 1> Out.txt
 
-Hydrogen.svg: hydrogen.gpi 
-	gnuplot $<
-
-Convergence.svg: convergence.gpi rmin.txt rmax.txt absacc.txt epsacc.txt 
-	gnuplot $<
-
-main.exe : main.cs matrix.dll QRGS.dll genlist.dll ode.dll
+main.exe : main.cs matrix.dll QRGS.dll genlist.dll ode.dll minimizer.dll
 	mcs -target:exe -out:$@ $(CODE) $(DLLS)
+
+BW_fit.svg: bw_fit.gpi bw_fitteddata.txt
+	gnuplot $<
+minimizer.dll: minimizer.cs 
+	mcs -target:library -out:./$@ $^ -reference:matrix.dll
 
 matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
 	mcs -target:library -out:./$@ $^

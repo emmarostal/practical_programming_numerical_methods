@@ -155,7 +155,7 @@
 	<path stroke='black'  d='M114.48,63.01 L114.48,324.40 L474.82,324.40 L474.82,63.01 L114.48,63.01 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(20.48,193.71) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="16.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >(E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-size="16.0" dy="-4.80"></tspan></text>
+		<text><tspan font-family="Arial" >|E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">|/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-size="16.0" dy="-4.80"></tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -415,7 +415,7 @@
 	<path stroke='black'  d='M614.48,63.01 L614.48,324.40 L974.82,324.40 L974.82,63.01 L614.48,63.01 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(520.48,193.71) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="16.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >(E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-size="16.0" dy="-4.80"></tspan></text>
+		<text><tspan font-family="Arial" >|E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">|/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-size="16.0" dy="-4.80"></tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -547,7 +547,7 @@
 	<path stroke='black'  d='M72.53,463.00 L72.53,724.40 L474.82,724.40 L474.82,463.00 L72.53,463.00 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(20.48,593.70) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="16.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Log</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">10</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">((E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)</tspan></text>
+		<text><tspan font-family="Arial" >Log</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">10</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">(|E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">|/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -669,7 +669,7 @@
 	<path stroke='black'  d='M572.53,463.00 L572.53,724.40 L974.82,724.40 L974.82,463.00 L572.53,463.00 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(520.48,593.70) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="16.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Log</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">10</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">((E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)</tspan></text>
+		<text><tspan font-family="Arial" >Log</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">10</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">(|E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">0</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">-E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">|/E</tspan><tspan font-family="Arial"  font-size="12.8" dy="4.80px">analytical</tspan><tspan font-family="Arial"  font-size="16.0" dy="-4.80px">)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

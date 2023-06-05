@@ -38,7 +38,7 @@ public static class main{
 		double eval = newton(toMinimize,-1,0.01);
         WriteLine("With the shooting method, the binding energy of lowest bound S-electron in H is found");
         WriteLine($"to be {eval} Hartree. Expected value is -0.5 Hartree.");
-        WriteLine("The wavefunction corresponding to this eigenenergy is plotted on Hydrogen.svg,");
+        WriteLine("The wavefunction corresponding to this eigen-energy is plotted on Hydrogen.svg,");
         WriteLine("along with the analytical solution. They only differ at the very end.");
 
         genlist<double> rs = new genlist<double>();
@@ -50,8 +50,8 @@ public static class main{
 		}
 		File.WriteAllText("wavefunctions.txt",toWrite);
         
-
-        WriteLine("Varying rmax");
+        WriteLine("Convergence progress:");
+        WriteLine("Varying rmax,");
         toWrite = "";
         for(int i = 0; i < 100; i++){
             double rmax = 6+0.04*(i);
@@ -61,7 +61,7 @@ public static class main{
         }
         File.WriteAllText("rmax.txt",toWrite);
 
-        WriteLine("Varying abs accuracy");
+        WriteLine("Varying absolute accuracy,");
         toWrite = "";
         for(int i = 0; i < 100; i++){
             double absacc = 1e-5*(100 *i+5);;
@@ -71,7 +71,7 @@ public static class main{
         }
         File.WriteAllText("absacc.txt",toWrite);
 
-        WriteLine("Varying relative accuracy");
+        WriteLine("Varying relative accuracy,");
         toWrite = "";
         for(int i = 0; i < 100; i++){
             double epsacc = 1e-5*(100*i+5);
@@ -82,7 +82,7 @@ public static class main{
         File.WriteAllText("epsacc.txt",toWrite);
 
  	toWrite = "";
-        WriteLine("Varying rmin");
+        WriteLine("Varying rmin,");
         for(int i = 0; i < 1000; i++){
             double rmin = 0.0003*(i+4);
             toMinimize = x => Me(x,rmin,8,1e-4,1e-4);

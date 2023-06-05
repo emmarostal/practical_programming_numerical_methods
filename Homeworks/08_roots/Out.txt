@@ -23,12 +23,13 @@ Part B
 --------------------------------------------------------------------------------------
 With the shooting method, the binding energy of lowest bound S-electron in H is found
 to be -0.500086306183978 Hartree. Expected value is -0.5 Hartree.
-The wavefunction corresponding to this eigenenergy is plotted on Hydrogen.svg,
+The wavefunction corresponding to this eigen-energy is plotted on Hydrogen.svg,
 along with the analytical solution. They only differ at the very end.
-Varying rmax
-Varying abs accuracy
-Varying relative accuracy
-Varying rmin
+Convergence progress:
+Varying rmax,
+Varying absolute accuracy,
+Varying relative accuracy,
+Varying rmin,
 Done.
 The convergence is investigated by means of varying different parameters, one
 at a time. The resulting plot can be seen in Convergence.svg.
