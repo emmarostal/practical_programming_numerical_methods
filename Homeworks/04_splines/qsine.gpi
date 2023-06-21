@@ -9,7 +9,7 @@ set ylabel "y"
 set tics out
 set grid
 set title "Quadratic interpolation of sin(x)"
-plot sin(x), "qinterp.txt" using ($1):($12) with point pt 7 ps 0.9 title "Values from list"\
-, "qinterp.txt" using ($5):($13) with point pt 7 ps 0.9 lc rgb "web-blue" title "Interpolated values"\
-, "qinterp.txt" using ($5):($14) with lines lc rgb "black" title "Integral" 
+plot sin(x), "qsine.txt" using ($1):($2) with point pt 7 ps 0.9 title "Values from list"\
+, "qsine.txt" using ($3):($4) with point pt 7 ps 0.9 lc rgb "web-blue" title "Interpolated values"\
+
 

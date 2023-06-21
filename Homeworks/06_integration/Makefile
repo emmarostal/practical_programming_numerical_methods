@@ -1,4 +1,3 @@
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 
@@ -33,3 +32,7 @@ erf_tab.data : Makefile
 	echo 1.8 0.989090502 >>$@
 	echo 2 0.995322265 >>$@
 	echo 3 0.999977910 >>$@
+
+clean:
+	rm -f main.exe Out.txt integrator.dll erf_tab.data calculated_erf.txt \
+	erf_residuals.txt Erf.svg ErfResiduals.svg 

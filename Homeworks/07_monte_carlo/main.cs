@@ -13,10 +13,9 @@ public static class main{
 		int resolution = 60;
 		double  min = 1;
 		double  max = 1e5;
-		Directory.CreateDirectory("data");
 		double[] realError = new double[resolution];
 		int[] Ns = new int[resolution];
-		using (StreamWriter output = new StreamWriter("data/uc.data"))
+		using (StreamWriter output = new StreamWriter("uc.data"))
 		{
 			for(int i=0;i<resolution;i++)
 			{

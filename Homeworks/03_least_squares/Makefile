@@ -1,9 +1,9 @@
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
-DIRQR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Homeworks/01_linear_equations
+DIR = ../../library
+DIRQR = ../01_linear_equations
 
-all: fitshift.svg Out.txt fit.svg
+all:  data.txt Out.txt fit.svg fitshift.svg
 fitshift.svg : fitshift.gpi data.txt
 	gnuplot $<
 
@@ -13,7 +13,7 @@ Out.txt   :   main.exe
 fit.svg : fit.gpi data.txt
 	gnuplot $<
 
-main.exe : main.cs matrix.dll fit.dll QRGS.dll
+main.exe : main.cs matrix.dll QRGS.dll fit.dll 
 	mcs -t:exe $(CODE) $(DLLS)
 
 matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
@@ -36,3 +36,7 @@ data.txt : Makefile
 	echo 10\\t25.2\\t3 >> $@
 	echo 13\\t15.2\\t2 >> $@
 	echo 15\\t11.1\\t2 >> $@
+
+clean:
+	rm -f Out.txt main.exe matrix.dll fit.dll QRGS.dll data.txt evaluatedFit.txt \
+	fit.svg fitshift.svg

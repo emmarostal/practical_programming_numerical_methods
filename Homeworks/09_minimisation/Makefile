@@ -1,7 +1,7 @@
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
-QRGSDIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Homeworks/01_linear_equations
-ODEDIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Homeworks/05_ode
-GDIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Exercises/7-generic_list
+DIR = ../../library
+QRGSDIR = ../01_linear_equations
+ODEDIR = ../05_ode
+GDIR = ../../Exercises/7-generic_list
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 
@@ -29,3 +29,7 @@ genlist.dll: $(GDIR)/genlist.cs
 
 ode.dll: $(ODEDIR)/ode.cs
 	mcs -target:library -out:./$@ $^ -reference:matrix.dll,genlist.dll
+
+clean:
+	rm -f main.exe Out.txt matrix.dll QRGS.dll ode.dll genlist.dll minimizer.dll BW_fit.svg bw_fitteddata.txt
+

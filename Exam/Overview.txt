@@ -1,0 +1,10 @@
+Implicit Heun's stepper for Ordinary Differential Equations
+
+The step is given by the formula,
+
+y_{x+h} = y_x + h/2(f(x,y_x)+f(x+h,y_{x+h}))
+where the vector y_{x+h} has to be found by solving numerically the above equation using your own root-finder.
+The start point for your rootfinding can be the Euler's step,
+
+y_{x+h} ≈ y_x + h f(x,y_x)
+and the error estimate could be the difference between the Euler's step and the implicit Heun's step.

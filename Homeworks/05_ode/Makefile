@@ -1,5 +1,5 @@
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
-GDIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/Exercises/7-generic_list
+DIR = ../../library
+GDIR = ../../Exercises/7-generic_list
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 
@@ -28,3 +28,8 @@ matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
 
 genlist.dll: $(GDIR)/genlist.cs
 	mcs -target:library -out:./$@ $^
+
+clean:
+	rm -f main.exe out.txt genlist.dll matrix.dll ode.dll \
+	Dampened_end.svg Dampened.svg LV.svg Sine.svg \
+	harmonic_diff.txt dampened_endpoints.txt dampened.txt lv.txt

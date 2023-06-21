@@ -1,10 +1,10 @@
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
+DIR = ../../library
 Out.txt   :   main.exe
 	mono main.exe > Out.txt
 
-main.exe : main.cs QRGS.dll matrix.dll
+main.exe : main.cs matrix.dll QRGS.dll 
 	mcs -t:exe $(CODE) $(DLLS)
 
 QRGS.dll: QRGS.cs
@@ -12,3 +12,6 @@ QRGS.dll: QRGS.cs
 
 matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
 	mcs -target:library -out:./$@ $^
+
+clean:
+	rm -f main.exe matrix.dll QRGS.dll Out.txt

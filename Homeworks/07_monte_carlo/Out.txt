@@ -6,7 +6,7 @@ The result can be seen in UnitCircle.svg.
 The estimated error and the actual error are plotted as functions of the number of
 sampling points N in UnitCircleErrors.svg to be compared with 1/Sqrt(N).
 Complicated integral 1-(cos(x)*cos(y)*cos(z))^-1 with respect to x, y and z,
-all from 0 to PI is calculated as: 1.39338728690733 +- 0.00319974597420118,
+all from 0 to PI is calculated as: 1.39089639809383 +- 0.00302374204720125,
 using N = 10000000 in simple Monte Carlo integration.
 It should return Gamma(1/4)^4 / (5*PI^3) = 1.3932039296856768591842462603255
 -----------------------------------------------------------------------------------

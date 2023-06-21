@@ -10,7 +10,7 @@ set ylabel "Area"
 set tics out
 set grid
 set title "Monte Carlo approximaton of area of unit circle"
-plot "data/uc.data" using ($2):($3) with point pt 7 ps 0.6 lc rgb "web-blue" title "Pseudo-random"\
-, "data/uc.data" using ($2):($3) with lines lc rgb "web-blue" notitle\
-, "data/uc.data" using ($2):($7) with point pt 7 ps 0.6 lc rgb "web-green" title "Quasi-random "\
-, "data/uc.data" using ($2):($7) with lines lc rgb "web-green" notitle\
+plot "uc.data" using ($2):($3) with point pt 7 ps 0.6 lc rgb "web-blue" title "Pseudo-random"\
+, "uc.data" using ($2):($3) with lines lc rgb "web-blue" notitle\
+, "uc.data" using ($2):($7) with point pt 7 ps 0.6 lc rgb "web-green" title "Quasi-random "\
+, "uc.data" using ($2):($7) with lines lc rgb "web-green" notitle\

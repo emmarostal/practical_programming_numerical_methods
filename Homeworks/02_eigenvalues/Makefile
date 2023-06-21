@@ -1,6 +1,6 @@
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
+DIR = ../../library
 
 all:  radial.svg fixed_rmax.svg fixed_dr.svg Out.txt
 fixed_rmax.svg : fixed_rmax.gpi fixed_rmax.data
@@ -31,5 +31,8 @@ matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
 jacobi.dll: jacobi.cs matrix.dll
 	mcs -target:library -out:$@ $(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
 
+clean:
+	rm -f Out.txt main.exe matrix.dll jacobi.dll fixed_dr.svg fixed_rmax.svg radial.svg \
+	fixed_dr.data fixed_rmax.data radial.data
 
 

@@ -1,8 +1,8 @@
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
-DIR = $(HOME)/prak_prog/repos/practical_programming_numerical_methods/library
+DIR = ../../library
 
-all: main.exe linear.svg Out.txt quadratic.svg qsine.svg
+all: main.exe Out.txt linear.svg quadratic.svg qsine.svg
 Out.txt   :   main.exe
 	mono main.exe > Out.txt
 
@@ -15,12 +15,15 @@ quadratic.svg : quadratic.gpi
 qsine.svg : qsine.gpi
 	gnuplot $<
 
-main.exe : main.cs interpolation.dll
-	mcs -t:exe $(CODE) $(DLLS) -reference:matrix.dll
-
-interpolation.dll: interpolation.cs qspline.cs 
-	mcs -target:library -out:./$@ $^ -reference:matrix.dll
+main.exe : main.cs matrix.dll interpolation.dll 
+	mcs -t:exe $(CODE) $(DLLS)
 
 matrix.dll: $(DIR)/matrix.cs $(DIR)/vector.cs
 	mcs -target:library -out:./$@ $^
 
+interpolation.dll: interpolation.cs qspline.cs 
+	mcs -target:library -out:./$@ $^ -reference:matrix.dll
+
+clean:
+	rm -f Out.txt main.exe interpolation.dll matrix.dll quadratic.svg qsine.svg linear.svg \
+	linterp.txt qinterp.txt qsine.txt

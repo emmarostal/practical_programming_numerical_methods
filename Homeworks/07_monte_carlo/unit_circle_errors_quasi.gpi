@@ -10,8 +10,8 @@ set xrange [0.8:120000]
 set tics out
 set grid
 set title "Error dependance of sampling points N for Monte Carlo integrations"
-plot "data/uc.data" using ($2):($4) with point pt 7 ps 0.6 lc rgb "web-blue" title "Pseudo-random estimated error"\
-,"data/uc.data" using ($2):($8)  with point pt 7 ps 0.6 lc rgb "orchid4" title "Quasi-random estimated error"\
-, "data/uc.data" using ($2):($5) with point pt 7 ps 0.6 lc rgb "purple" title "Real error"\
-,"data/uc.data" using ($2):($6) with lines lw 3 lc rgb "forest-green" title "1/Sqrt(N)"\
+plot "uc.data" using ($2):($4) with point pt 7 ps 0.6 lc rgb "web-blue" title "Pseudo-random estimated error"\
+,"uc.data" using ($2):($8)  with point pt 7 ps 0.6 lc rgb "orchid4" title "Quasi-random estimated error"\
+, "uc.data" using ($2):($5) with point pt 7 ps 0.6 lc rgb "purple" title "Real error"\
+,"uc.data" using ($2):($6) with lines lw 3 lc rgb "forest-green" title "1/Sqrt(N)"\
 
