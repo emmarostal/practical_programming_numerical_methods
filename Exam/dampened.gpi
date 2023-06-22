@@ -1,0 +1,11 @@
+set terminal svg background "white"
+set output "Dampened.svg"
+set key bottom right
+set xlabel "t"
+set xrange [-0.3:10.3]
+set yrange [-4.3:3.5]
+set tics out
+set grid
+set title "Oscillator with friction example, recreated"
+plot "dampened.txt" using ($1):($2) with lines lt rgb "blue" lw 3 title "theta(t)"\
+, "dampened.txt" using ($1):($3) with lines lt rgb "dark-green" lw 3 title "omega(t)"\
