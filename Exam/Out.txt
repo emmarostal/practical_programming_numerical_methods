@@ -1,6 +1,11 @@
 -----------------------------------------------------------------------------------
-The implicit Heun's stepper is implemented, and selected plots and gifs from Homework
-05 ode are replicated:
+Part A (6 points): Implementation of the implicit Heuns stepper
+The implicit Heun's stepper is implemented, making use of root-finding to obtain a
+better estimate for the vector y_{x+h}. Details to this approach can be seen in
+Exam_task.txt
+-----------------------------------------------------------------------------------
+Part B (3 points): Application in solving ODEs
+Selected plots and gifs from Homework 05 ode are replicated using the new stepper
 
 Solving u'' = -u with initial conditions u_0 = 0, u_0' = 1, should return sin(x).
 The result can be seen in Sine.svg.

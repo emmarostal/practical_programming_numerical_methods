@@ -3,7 +3,7 @@ GDIR = ../../Exercises/7-generic_list
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 
-all: Out.txt Sine.svg Dampened.svg Dampened_end.svg LV.svg
+all: Out.txt Sine.svg Dampened.svg Dampened_end.svg LV.svg Threebody.gif
 Out.txt:  main.exe  
 	mono main.exe > out.txt
 	
@@ -15,7 +15,8 @@ Dampened_end.svg: dampened_endpoints.gpi
 	gnuplot $<
 LV.svg: lv.gpi
 	gnuplot $<
-
+Threebody.gif: threebody.gpi
+	gnuplot $<
 
 main.exe : main.cs matrix.dll ode.dll genlist.dll
 	mcs -target:exe -out:$@ $(CODE) $(DLLS)
@@ -32,4 +33,5 @@ genlist.dll: $(GDIR)/genlist.cs
 clean:
 	rm -f main.exe out.txt genlist.dll matrix.dll ode.dll \
 	Dampened_end.svg Dampened.svg LV.svg Sine.svg \
-	harmonic_diff.txt dampened_endpoints.txt dampened.txt lv.txt
+	harmonic_diff.txt dampened_endpoints.txt dampened.txt lv.txt \
+	threebody.txt Threebody.gif

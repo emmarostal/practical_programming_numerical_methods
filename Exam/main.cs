@@ -12,8 +12,14 @@ public static class main{
 		vector ya = new vector(0,1);
 		string border = new string('-',83);
 		WriteLine(border);
-        WriteLine("The implicit Heun's stepper is implemented, and selected plots and gifs from Homework");
-        WriteLine("05 ode are replicated:\n");
+        WriteLine("Part A (6 points): Implementation of the implicit Heuns stepper");
+        WriteLine("The implicit Heun's stepper is implemented, making use of root-finding to obtain a");
+        WriteLine("better estimate for the vector y_{x+h}. Details to this approach can be seen in");
+        WriteLine("Exam_task.txt");
+        WriteLine(border);
+
+        WriteLine("Part B (3 points): Application in solving ODEs");
+        WriteLine("Selected plots and gifs from Homework 05 ode are replicated using the new stepper\n");
 		WriteLine("Solving u'' = -u with initial conditions u_0 = 0, u_0' = 1, should return sin(x).");
 		WriteLine("The result can be seen in Sine.svg.\n");
 	    var points =driver(harmonic,0,ya,4*PI,1e-1,1e-1,1e-1,xlistInit, ylistInit);
@@ -75,7 +81,6 @@ public static class main{
 
     }
     
-
     static (vector,vector) HeunsImplicitStep(Func<double,vector,vector> f,double x, vector y, double h)
     {
         // Perform one step of Heun's implicit method
@@ -110,13 +115,13 @@ public static class main{
     }
     
 public static (genlist<double>,genlist<vector>) driver(
-        Func<double,vector,vector> f, /* the f from dy/dx=f(x,y) */
+        Func<double,vector,vector> f,/* the f from dy/dx=f(x,y) */
         double a,                    /* the start-point a */
         vector ya,                   /* y(a) */
         double b,                    /* the end-point of the integration */
         double h=0.01,               /* initial step-size */
         double acc=0.01,             /* absolute accuracy goal */
-        double eps=0.01,              /* relative accuracy goal */
+        double eps=0.01,             /* relative accuracy goal */
         genlist<double> xlist=null, 
         genlist<vector> ylist=null
     ){
@@ -180,7 +185,7 @@ public static (genlist<double>,genlist<vector>) driver(
         }
     }//driver
 
-    public static vector minimizer(Dictionary<string,object> a){ //newton(func_to_minimize,guess_from_newton)
+    public static vector minimizer(Dictionary<string,object> a){ 
         
         double x = (double)a["x"];
         double h = (double)a["h"];

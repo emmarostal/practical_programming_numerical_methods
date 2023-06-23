@@ -10,3 +10,7 @@ Driver has been improved with an option to give the endpoints only.
 The result can be seen in Dampened_end.svg.
 The Lotka-Volterra system example is recreated and can be seen in LV.svg
 -----------------------------------------------------------------------------------
+Solving three body problem with initial conditions from wikipedia
+The result can be seen in Threebody.gif
+
+-----------------------------------------------------------------------------------
