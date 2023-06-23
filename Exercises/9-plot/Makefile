@@ -44,3 +44,6 @@ lngamma_tab.data : Makefile
 	echo 3 1.79 >>$@ /log 6
 	echo 4 3.178 >>$@ /log 24 
 
+clean:
+	rm -f main.exe sfuns.dll factorials_tab.data erf_tab.data lngamma_tab.data \
+	Lngamma.svg Gamma.svg Erf.svg gamma.data erf.data lngamma.data

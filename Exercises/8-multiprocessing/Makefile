@@ -10,3 +10,6 @@ Out.txt : main.exe Makefile
 
 main.exe : main.cs
 	mcs main.cs
+
+clean: 
+	rm -f main.exe Out.txt

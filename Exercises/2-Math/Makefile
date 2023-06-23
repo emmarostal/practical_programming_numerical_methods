@@ -5,5 +5,5 @@ main.exe : main.cs sfuncs.dll
 sfuncs.dll : sfuncs.cs
 	mcs -target:library -out:sfuncs.dll sfuncs.cs 
 clean: 
-	rm --force Out.txt main.exe
+	rm -f Out.txt main.exe sfuncs.dll
 

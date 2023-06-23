@@ -17,4 +17,4 @@ input.txt: Makefile
 	echo 7 >>$@
 	echo 8 >>$@
 clean:                          
-	rm --force Out.txt main.exe
+	rm -f Out.txt main.exe input.txt inputfile.txt

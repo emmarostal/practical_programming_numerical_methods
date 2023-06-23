@@ -4,21 +4,6 @@ using static System.Math;
 using System.Collections.Generic;
 
 public static class rootfinder{
-
-    //public static double newton(Func<Dictionary<string,object>,double> f, Dictionary<string,object> dict, double eps=1e-2){
-            
-            //Func<vector,vector> fvec = z => new vector(f(z[0]));
-            //vector xvec = new vector(1);
-            //xvec[0] = x;
-            //return newton(fvec,xvec,eps)[0];
-           
-            
-            //Func<Dictionary<string,object>,vector> fvec = z => new vector(f(dict,z[0]));
-            //vector xvec = new vector(1);
-            //xvec[0] = x;
-            //return newton(fvec,xvec,eps)[0];
-       //}
-
     public static vector newton(Func<Dictionary<string,object>,vector> f, Dictionary<string,object> dict, double eps=1e-2){
         vector x = (vector)dict["y_old"];
         int n = x.size;

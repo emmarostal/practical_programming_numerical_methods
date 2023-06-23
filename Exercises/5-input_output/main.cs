@@ -10,7 +10,8 @@ class inputoutput{
 
     static void exercise_1(string[] args){
         WriteLine("Task 1");
-        WriteLine("______________________");
+        string border = new string('-',45);
+        WriteLine(border);
         foreach(var arg in args){
             var words = arg.Split(':');
             if(words[0]=="-numbers"){
@@ -26,7 +27,8 @@ class inputoutput{
 
     static void exercise_2(){
         WriteLine("Task 2");
-        WriteLine("______________________");
+        string border = new string('-',45);
+        WriteLine(border);
         char[] split_delimiters = {' ','\t','\n'};
         var split_options = System.StringSplitOptions.RemoveEmptyEntries;
         string line;
@@ -53,7 +55,8 @@ class inputoutput{
         var instream = new System.IO.StreamReader(infile);
         var outstream = new System.IO.StreamWriter(outfile,append:true);
         outstream.WriteLine("Task 3");
-        outstream.WriteLine("______________________");
+        string border = new string('-',45);
+        outstream.WriteLine(border);
         for(string line=instream.ReadLine();line!=null;line=instream.ReadLine()){
             double x=double.Parse(line);
             outstream.WriteLine($"{x} {Sin(x)} {Cos(x)}");

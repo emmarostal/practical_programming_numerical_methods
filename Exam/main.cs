@@ -12,10 +12,11 @@ public static class main{
 		vector ya = new vector(0,1);
 		string border = new string('-',83);
 		WriteLine(border);
-		WriteLine("Part A");
+        WriteLine("The implicit Heun's stepper is implemented, and selected plots and gifs from Homework");
+        WriteLine("05 ode are replicated:\n");
 		WriteLine("Solving u'' = -u with initial conditions u_0 = 0, u_0' = 1, should return sin(x).");
-		WriteLine("The result can be seen in Sine.svg.");
-		var points =driver(harmonic,0,ya,4*PI,1e-1,1e-1,1e-1,xlistInit, ylistInit);
+		WriteLine("The result can be seen in Sine.svg.\n");
+	    var points =driver(harmonic,0,ya,4*PI,1e-1,1e-1,1e-1,xlistInit, ylistInit);
 		var xs = points.Item1;
 		var ys = points.Item2;
 		string toWrite = "";
@@ -28,7 +29,7 @@ public static class main{
 		ylistInit=new genlist<vector>();
 		ya = new vector(PI-0.1,0);
 		WriteLine("Solving dampened pendulum with same parameters as in scipy.integrate.odeint manual.");
-		WriteLine("The result can be seen in Dampened.svg.");
+		WriteLine("The result can be seen in Dampened.svg.\n");
 		points = driver(dampened_pendulum,0,ya,10,1e-1,1e-1,1e-1,xlistInit, ylistInit);
 		xs = points.Item1;
 		ys = points.Item2;
@@ -37,7 +38,43 @@ public static class main{
 			toWrite += $"{xs[i]}\t{ys[i][0]}\t{ys[i][1]}\n";
 		}
 		File.WriteAllText("dampened.txt", toWrite);
+
+        WriteLine("Solving three body problem with initial conditions from wikipedia");
+		ya = new vector(new double[]{
+            0.4662036850,
+			0.4323657300,
+			-0.93240737,
+			-0.86473146,
+			0.4662036850,
+			0.4323657300,
+			-0.97000436,
+			0.24308753,
+			0,
+			0,
+			0.97000436,
+			-0.24308753});
+
+		xlistInit=new genlist<double>();
+		ylistInit=new genlist<vector>();
+		points = driver(threebody,0,ya,6.3259,1e-4,1e-4,1e-4,xlistInit, ylistInit);
+		xs = points.Item1;
+		ys = points.Item2;
+		toWrite = $"{xs[0]}\t{ys[0][6]}\t{ys[0][7]}\t{ys[0][8]}\t{ys[0][9]}\t{ys[0][10]}\t{ys[0][11]}\n";
+		double currentTime = 0;
+		double dt = 0.02;
+		for(int i = 0; i < xs.size; i++){
+			if(xs[i] > currentTime+dt){
+				toWrite += $"{xs[i]}\t{ys[i][6]}\t{ys[i][7]}\t{ys[i][8]}\t{ys[i][9]}\t{ys[i][10]}\t{ys[i][11]}\n";
+				currentTime = xs[i];
+			}
+		}
+		File.WriteAllText("threebody.txt", toWrite);
+		WriteLine("The result can be seen in Threebody.gif\n");
+        WriteLine(border);
+	
+
     }
+    
 
     static (vector,vector) HeunsImplicitStep(Func<double,vector,vector> f,double x, vector y, double h)
     {
@@ -50,7 +87,7 @@ public static class main{
 
         for (int i = 0; i < n; i++)
         {
-            y_pred_guess[i] = y[i] + h * k1[i]; //change y_pred here by root-finding
+            y_pred_guess[i] = y[i] + h * k1[i]; //Euler as first guess
             y_next[i] = y[i];
         }
 
@@ -59,33 +96,16 @@ public static class main{
         mydictionary.Add("x",x);
         mydictionary.Add("h",h);
         mydictionary.Add("f",f);
-        y_pred_guess.print();
-        WriteLine("Starting minimization...");
 
-        WriteLine($"x = {x}, h = {h}");
-
-        y_pred = rootfinder.newton(minimizer,mydictionary);
-        WriteLine("Minimization finished");
-        y_pred.print();
+        y_pred = rootfinder.newton(minimizer,mydictionary); //improve y_pred vector by rootfinding
     
-        //y_pred = y_pred_guess;
-        double tolerance = 1e-3;
-        double delta = 1.0;
-
         vector k2 = f(x + h, y_pred);
         vector er = new vector(y.size);
+
         for (int i = 0; i < n; i++){
                 y_next[i] = y[i] + h * (k2+k1)[i]/2;
                 er[i]= (y_next[i] - y_pred_guess[i]);
-                //delta = y_next[i] - y_pred_guess[i];
-                //y_pred[i] = y_next[i];
             }
-        //while (Math.Abs(delta) > tolerance)
-        //{
-            
-            
-            
-        //}
         return (y_next,er);
     }
     
@@ -179,7 +199,38 @@ public static (genlist<double>,genlist<vector>) driver(
 		return new vector(ys[1],-ys[0]);
 	}
     static vector dampened_pendulum(double x, vector ys){
-		//assume x is time, y1 is theta and y2 is omega. Assume same damping constants as in python example.
+		//assume x is time, y1 is theta and y2 is omega. Assume damping constants.
 		return new vector(ys[1],-0.25*ys[1]-5*Sin(ys[0]));
 	}
+    static vector threebody(double x, vector ys){
+		double vx_1 = ys[0];
+		double vy_1 = ys[1]; 
+		double vx_2 = ys[2];
+		double vy_2 = ys[3];
+		double vx_3 = ys[4];
+		double vy_3 = ys[5];
+		double xx_1 = ys[6];
+		double xy_1 = ys[7];
+		double xx_2 = ys[8];
+		double xy_2 = ys[9];
+		double xx_3 = ys[10];
+		double xy_3 = ys[11];
+		double d12 = Sqrt( (xx_1-xx_2)*(xx_1-xx_2)+(xy_1-xy_2)*(xy_1-xy_2));
+		double d13 = Sqrt( (xx_1-xx_3)*(xx_1-xx_3)+(xy_1-xy_3)*(xy_1-xy_3));
+		double d23 = Sqrt( (xx_3-xx_2)*(xx_3-xx_2)+(xy_3-xy_2)*(xy_3-xy_2));
+		
+        return new vector( new double[] {
+			(xx_2 - xx_1)/Pow(d12,3) +(xx_3 - xx_1)/Pow(d13,3),
+			(xy_2 - xy_1)/Pow(d12,3) +(xy_3 - xy_1)/Pow(d13,3),
+			(xx_1 - xx_2)/Pow(d12,3) +(xx_3 - xx_2)/Pow(d23,3),
+			(xy_1 - xy_2)/Pow(d12,3) +(xy_3 - xy_2)/Pow(d23,3),
+			(xx_1 - xx_3)/Pow(d13,3) +(xx_2 - xx_3)/Pow(d23,3),
+			(xy_1 - xy_3)/Pow(d13,3) +(xy_2 - xy_3)/Pow(d23,3),
+			vx_1,
+			vy_1,
+			vx_2,
+			vy_2,
+			vx_3,
+			vy_3});
+    }
 }

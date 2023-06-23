@@ -5,7 +5,7 @@ GDIR = ../Exercises/7-generic_list
 ODEDIR = ../Homeworks/05_ode
 QRGSDIR = ../Homeworks/01_linear_equations
 
-all: Out.txt Sine.svg Dampened.svg
+all: Out.txt Sine.svg Dampened.svg Threebody.gif
 Out.txt:  main.exe  
 	mono main.exe > Out.txt
 
@@ -30,5 +30,9 @@ Sine.svg: sine.gpi
 Dampened.svg: dampened.gpi
 	gnuplot $<
 
+Threebody.gif: threebody.gpi
+	gnuplot $<
+
 clean:
-	rm -f genlist.dll matrix.dll QRGS.dll rootfinder.dll main.exe Out.txt Sine.svg harmonic_diff.txt
+	rm -f genlist.dll matrix.dll QRGS.dll rootfinder.dll main.exe Out.txt \
+	Sine.svg harmonic_diff.txt Dampened.svg dampened.txt threebody.gif threebody.txt

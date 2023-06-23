@@ -5,5 +5,5 @@ main.exe : main.cs vec.dll
 vec.dll : vec.cs
 	mcs -target:library -out:vec.dll vec.cs 
 clean: 
-	rm --force Out.txt main.exe
+	rm -f Out.txt main.exe vec.dll
 
