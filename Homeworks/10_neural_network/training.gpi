@@ -1,0 +1,11 @@
+set terminal svg background "white"
+set output "Training.svg"
+set key top right
+set xlabel "x"
+set ylabel "Cos(5x)Exp(-xx)"
+set xrange [-1.05:1.05]
+set grid
+set title "Interpolation between training points of\n wavelet function"
+set tics out
+plot "trainingPoints.txt" using ($1):($2) with points pt 2 ps 1.5 lc "web-green" title "Training points"\
+, "5neuronInterp.txt" using ($1):($2) with lines lt rgb "black" lw 2 title "Interpolated values"\

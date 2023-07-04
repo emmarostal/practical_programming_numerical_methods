@@ -1,0 +1,7 @@
+----------------------------------------
+Part A
+----------------------------------------
+Making training points
+Interpolating using 5 neurons
+The result can be seen in Training.svg.
+----------------------------------------
