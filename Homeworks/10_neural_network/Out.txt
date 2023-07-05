@@ -1,7 +1,12 @@
-----------------------------------------
+----------------------------------------------------------------------
 Part A
-----------------------------------------
+----------------------------------------------------------------------
 Making training points
-Interpolating using 5 neurons
+Interpolating using 10 neurons and 100 interpolation points
 The result can be seen in Training.svg.
-----------------------------------------
+----------------------------------------------------------------------
+Part B
+----------------------------------------------------------------------
+The first and second derivatives and the anti-derivative
+can be seen in Plot.svg along with the analytical solutions.
+----------------------------------------------------------------------

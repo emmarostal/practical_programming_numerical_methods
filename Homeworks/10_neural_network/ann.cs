@@ -50,16 +50,20 @@ public class ann{
         }
         return result;
     }
-    public double antiDRespone(double x, double a){
-        /* return the second derivative of the response of the network to the input signal x */
+    public double antiDResponse(double x){
+        /* return the anti derivative of the response of the network to the input signal x */
         double result = 0;
         for(int i = 0; i<n; i++){
             double ai = p[i];
             double bi = p[i+n];
             double wi = p[i+2*n];
-            result += wi * bi * (antiD((x-ai)/bi) - antiD((a-ai)/bi));
+            result += wi * bi * (antiD((x-ai)/bi));
         }
         return result;
+    }
+    public double integral(double a, double b){
+        /* return the anti derivative of the response of the network to the input signal between two x-values */
+        return antiDResponse(b) - antiDResponse(a);
     }
    public void train(vector x,vector y){
         /* train the network to interpolate the given table {x,y} */
