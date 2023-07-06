@@ -1,4 +1,5 @@
 set terminal gif animate delay 2    #2 ms
+
 set output "Threebody.gif"
 
 datafile = 'threebody.txt'

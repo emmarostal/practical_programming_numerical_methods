@@ -4,7 +4,7 @@ set key top right
 set xlabel "x"
 set ylabel "Cos(5x-1)Exp(-xx)"
 set xrange [-1.05:1.05]
-set yrange [-0.8:1.05]
+set yrange [-0.9:1.05]
 set grid
 set title "Interpolation between training points of\n wavelet function"
 set tics out

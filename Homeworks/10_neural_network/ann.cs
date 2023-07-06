@@ -11,7 +11,6 @@ public class ann{
     public Func<double,double> secondD= x => Exp(-x*x)*(4*x*x*x-6*x); /* 2nd derivative of activation function */
     public Func<double,double> antiD = x => -0.5*Exp(-x*x); /* first antiderivative of activation function */
     public vector p; /* network parameters */
-    public int nsteps;
     public ann(int n){
         this.n = n; 
         int numParams = 3*n; //n a_i, n b_i, n w's
