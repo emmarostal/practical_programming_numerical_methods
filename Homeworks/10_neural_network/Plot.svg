@@ -169,7 +169,7 @@
 </g>
 	<g id="gnuplot_plot_1a" ><title>Training points</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(253.82,85.99)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="end">
+	<g transform="translate(402.83,308.38)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Training points</tspan></text>
 	</g>
 </g>
@@ -194,12 +194,12 @@
 	<use xlink:href='#gpPt1' transform='translate(414.48,271.27) scale(6.75)' color='rgb(  0, 192,   0)'/>
 	<use xlink:href='#gpPt1' transform='translate(434.59,275.63) scale(6.75)' color='rgb(  0, 192,   0)'/>
 	<use xlink:href='#gpPt1' transform='translate(454.71,260.90) scale(6.75)' color='rgb(  0, 192,   0)'/>
-	<use xlink:href='#gpPt1' transform='translate(285.62,81.76) scale(6.75)' color='rgb(  0, 192,   0)'/>
+	<use xlink:href='#gpPt1' transform='translate(434.63,304.15) scale(6.75)' color='rgb(  0, 192,   0)'/>
 </g>
 	</g>
 	<g id="gnuplot_plot_2a" ><title>Interpolated values</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(253.82,105.49)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="end">
+	<g transform="translate(402.83,327.88)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Interpolated values</tspan></text>
 	</g>
 </g>
@@ -1204,7 +1204,7 @@
 	<use xlink:href='#gpPt6' transform='translate(473.61,243.30) scale(1.12)' color='rgb(  0,   0,   0)'/>
 	<use xlink:href='#gpPt6' transform='translate(474.02,242.89) scale(1.12)' color='rgb(  0,   0,   0)'/>
 	<use xlink:href='#gpPt6' transform='translate(474.42,242.48) scale(1.12)' color='rgb(  0,   0,   0)'/>
-	<use xlink:href='#gpPt6' transform='translate(285.62,101.26) scale(1.12)' color='rgb(  0,   0,   0)'/>
+	<use xlink:href='#gpPt6' transform='translate(434.63,323.65) scale(1.12)' color='rgb(  0,   0,   0)'/>
 </g>
 	</g>
 <g fill="none" color="#FFFFFF" stroke="rgb(  0,   0,   0)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
