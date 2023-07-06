@@ -70,7 +70,7 @@ public static class main{
     }
 
     public static double Wavelet(double x){
-        return Cos(5*x)*Exp(-Pow(x,2)); 
+        return Cos(5*x-1)*Exp(-Pow(x,2)); 
     }
 	public static double firstD(double x){
         return -2.0*Exp(-x*x)*(2.5*Sin(5*x-1) + x * Cos(5*x-1));

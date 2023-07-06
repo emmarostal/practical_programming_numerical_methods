@@ -3,7 +3,7 @@ set output "Plot.svg"
 
 set multiplot layout 2,2
 
-set title "Cos(5x)Exp(-xx)" font ",18"
+set title "Cos(5x-1)Exp(-xx)" font ",18"
 set xlabel "x" font ",16"
 set ylabel "g(x)" font ",16"
 set key font ",13"

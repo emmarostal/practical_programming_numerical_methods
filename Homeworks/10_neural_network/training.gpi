@@ -2,7 +2,7 @@ set terminal svg background "white"
 set output "Training.svg"
 set key top right
 set xlabel "x"
-set ylabel "Cos(5x)Exp(-xx)"
+set ylabel "Cos(5x-1)Exp(-xx)"
 set xrange [-1.05:1.05]
 set yrange [-0.8:1.05]
 set grid
